@@ -308,7 +308,7 @@ void callback(char *topic, uint8_t *payload, unsigned int length)
 {
   char payloadToChar[50] = {0};
   String parsedTopic = String(topic);
-  parsedTopic = parsedTopic.substring(baseTopicSub.length() + 1);
+  parsedTopic = parsedTopic.substring(baseTopicSub.length());
   int reg = parsedTopic.toInt();
   if (reg != 0) {
     if (reg >= 10 && reg < 20 ) {
