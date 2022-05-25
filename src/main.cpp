@@ -164,6 +164,7 @@ void taskMQTT(void * params) {
         mClient.connect(mac.c_str(), NULL, NULL, willtopic.c_str(), 0, false, "disconnected", true);
         delay(3000);
         if (mClient.connected()) {
+          mClient.subscribe(baseTopicSub.c_str());
           mClient.publish(String(baseTopicPub + "status").c_str(), String("connected").c_str());
           mClient.publish(String(baseTopicPub + "version").c_str(), String(FW_VERSION).c_str());
         }
